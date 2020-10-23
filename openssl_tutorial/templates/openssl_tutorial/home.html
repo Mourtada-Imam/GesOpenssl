@@ -1,0 +1,25 @@
+{% extends "openssl_tutorial/base.html" %}
+{%block content %}
+
+	<h1>OpenSSL</h1>
+	<p>OpenSSL est un programme utilisant les protocoles de chiffrement SSL (v2/v3)  et TLS (v1)</p>
+<p>Il est utilisé principalement pour :</p>
+<ul><li>Créer des clés RSA, DH et DSA.</li>
+<li>Créer des certificats X509, CSR et CRL.</li>
+<li>Calculer des sommes de fichiers.</li>
+<li>Chiffrer et déchiffrer des chaines de caractères/des fichiers.</li>
+<li>Effectuer des tests SSL/TLS entre un client et un serveur.</li>
+ <br/><hr>
+<a href="{% url 'form' %}">Générer un certificat </a> <br />
+<hr> 
+ <a href="{% url 'ope2' %}">Afficher la version installée</a> <br />
+ <a href="{% url 'ope' %}">Afficher les sous-commandes disponibles </a> <br />
+  <a href="{% url 'ope3' %}">Tester les performances de son système </a> <br />
+   <a href="{% url 'ope4' %}">Encoder une chaîne de caractères en base64/md5 </a> <br />
+   <a href="{% url 'ope5' %}">Chiffrer-Déchiffrer une chaine de caractères ou un fichier</a> <br />
+   <a href="{% url 'ope6' %}">Clé de contrôle MD5 ou SHA1 d'un fichier</a> <br />
+   <a href="{% url 'ope7' %}">Exporter ou importer un certificat au format PKCS#12</a> <br />
+   <a href="{% url 'ope8' %}">Extraire les informations d'un certificat</a> <br />
+   <a href="{% url 'ope9' %}">Générer des clés</a> <br />
+   <a href="{% url 'ope10' %}">Générer un certificat auto-signé</a> <br />
+{%endblock content %}

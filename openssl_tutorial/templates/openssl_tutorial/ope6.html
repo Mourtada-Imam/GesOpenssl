@@ -1,0 +1,17 @@
+{% extends "openssl_tutorial/base.html" %}
+{% load static %}
+{%block content %}
+	<h1>Clé de contrôle MD5 ou SHA1 d'un fichier</h1>
+	<p>Pour afficher la clé de contrôle d'un fichier, il suffit d'utiliser la sous-commande dgst suivi de l'algorithme voulu.</p>
+	<img src="{% static 'blog/images/cl1.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>Il existe également une commande propre à chaque algorithme et qui retourne le même résultat :</p>
+	<img src="{% static 'blog/images/cl2.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>Il est possible également de signer la clé de contrôle d'un fichier à l'aide d'une clé privée afin d'éviter toute modification sans permission :</p>
+	<p>Génération du fichier syslog.sha1 contenant la clé de contrôle et sécurisé par une clé privée (mykey2.pem).</p>
+	<img src="{% static 'blog/images/cl3.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p style="color:red;">Il ne faut pas oublier de distribuer avec le fichier contenant la clé de contrôle (syslog.sha1) le fichier contenant la clé publique correspondant à la clé privée utilisée (pubkey.pem).</p>
+	<p style="color:red;">Par contre, ce qu'il ne faut surtout pas faire : distribuer sa clé privée (mykey2.pem).
+Il faut la garder bien au chaud dans un endroit bien secret.</p>
+	<p>Pour la vérification de la clé de contrôle sécurisée, il suffit d'utiliser la commande suivante en y indiquant la clé publique correspondante à la clé privée utilisée lors de la génération de la clé de contrôle sécurisée.</p>
+	<img src="{% static 'blog/images/cl4.png'%}" class="img-fluid" alt="Responsive image"><br/>
+{%endblock content %}

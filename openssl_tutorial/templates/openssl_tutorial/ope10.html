@@ -1,0 +1,28 @@
+{% extends "openssl_tutorial/base.html" %}
+{% load static %}
+{%block content %}
+	<h1> Générer un certificat auto-signé</h1>
+	<p>Par défaut, OpenSSL utilise le fichier de configuration "/etc/ssl/openssl.cnf" pour la génération des certificats.</p>
+	<p>Pour utiliser un fichier de configuration personnalisé, il suffit d'ajouter l'argument "-config {fichier_de_configuration_personnalisé}" à la commande openssl.</p>
+	<p>Avant de pouvoir générer un certificat, il faut obligatoirement générer une clé RSA ou DSA.</p>
+	<p>Dans les exemples suivants, la clé privée "mykey.pem" sera utilisée pour la génération des certificats.</p>
+	<h3 style="color:blue;">La saisie d'une phrase de passe pour la protection de la clé privée est obligatoire.</h3>
+	<p>Pour générer ses propres certificats, sans passer par une autorité de certification externe :</p>
+	<img src="{% static 'blog/images/cr1.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>On indique pour le paramètre "-out" le nom de l'autorité de certification à générer puis la durée de validité en jour avec le paramètre "-days"</p>
+	<p>Cette autorité de certification permettra de signer les futures demandes de certificats auto-signés.
+	Cette génération est à faire une seule fois.</p>
+	<p>Le Common Name à indiquer ne doit correspondre à aucun nom de domaine ayant besoin d'un certificat.</p>
+	<p>Cette autorité de certification peut-être mis à disposition du public afin d'être intégré dans les différents navigateurs comme étant une autorité de certification reconnue.</p>
+	<h3 style="color: blue;">Création d'une demande de certificat</h3>
+	<p>Une demande de certificat peut être utilisée sur un site comme <a href ="http://www.cacert.org/">cacert</a> afin d'obtenir un certificat reconnu par une autorité de certification ou afin d'être signé par le certificat ca.crt généré ci-dessus.</p>
+	<img src="{% static 'blog/images/cr2.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>La demande "cert.csr" peut ensuite être transmise à l'autorité de certification qui fournira par la suite le certificat résultant.</p>
+	<p>Le Common Name à indiquer doit correspondre au nom de domaine pour lequel vous souhaitez un certificat.</p><br />
+	<h3 style="color: blue ;">Génération du certificat final</h3>
+	<p>A l'aide du certificat de certification généré au tout début (ca.crt), nous allons générer le certificat correspondant à la demande (mondomain.csr) générée ci-dessus</p>
+	<img src="{% static 'blog/images/cr3.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>L'option -CAcreateserial est à utiliser seulement la première fois.</p>
+	<p>Ceci va générer un identifiant (ca.srl).</p>
+	<p>Lors des prochaines certification (pour renouvellement ou pour d'autres domaines) l'identifiant, contenu dans le fichier ca.srl, sera incrémenté à l'aide de l'option -CAserial ca.srl</p>
+{%endblock content %}

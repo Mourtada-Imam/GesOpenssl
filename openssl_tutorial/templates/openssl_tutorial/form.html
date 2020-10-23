@@ -1,0 +1,86 @@
+{% extends "openssl_tutorial/base.html" %}
+
+{%block content %}
+
+<h1>Générateur de CSR</h1>
+{% csrf_token %}
+<form>
+	<main role="main" class="container">
+		<div class="row">
+			<div class="col-md-8">
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" >Nom Commun (CN)</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: domaine.com ou .domaine.com ..." required="">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" >Nom de l'organisation (O)</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: UMI-FS " required="">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" >Département de l'organisation (OU)</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: Département de Maths Info " required="">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Ville</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: Meknes " required="">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">Région ou Province</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: Fes-Meknes " required="">
+				</div>
+			</div>
+			<br />
+			<hr>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label"> Code Pays </label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"  placeholder="ex: Ma " required="">
+				</div>
+			</div>
+			<br />
+			<hr>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label"> E-mail de l'organisation </label>
+				<div class="col-sm-10">
+					<input type="email" class="form-control"   placeholder="ex: Info@gmail.com " required="" >
+				</div>
+			</dir>
+			<br />
+			<hr>
+			<div class="form-group row">
+				<label  >Taille de la clé RSA</label>
+				<select class="form-control" id="exampleFormControlSelect1" >
+					<option>2048</option>
+					<option>4096</option>
+				</select>
+			</div>
+			<br />
+			<hr>
+
+
+			<div class="form-group row">
+				<label  >Algorithme de la signature</label>
+				<select class="form-control " id="exampleFormControlSelect2">
+					<option>SHA-2</option>
+					<option>SHA-1</option>
+				</select>
+			</div>
+		</main>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+
+
+
+	{%endblock content %}

@@ -1,0 +1,38 @@
+{% extends "openssl_tutorial/base.html" %}
+{% load static %}
+{%block content %}
+	<h1>Chiffrer-Déchiffrer une chaine de caractères ou un fichier</h1>
+	<span style="text-decoration: underline;">Encodage en BASE64</span>
+	<p>Encoder le contenu d'un fichier sur la sortie standard :</p>
+	<img src="{% static 'blog/images/ch1.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>Encoder le contenu d'un fichier et écrire le résultat dans un autre fichier :</p>
+	<img src="{% static 'blog/images/ch2.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<p>Encoder une chaine de caractères :</p>
+	<img src="{% static 'blog/images/ch3.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p style="color:red;">Ne pas oublier d'ajouter l'option -n à la commande echo sinon un retour chariot sera ajouté à la chaine encodée.</p>
+	 <p>Décoder une chaine de caractères :</p>
+	 <img src="{% static 'blog/images/ch4.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	  <p>Décoder le contenu d'un fichier sur la sortie standard :</p>
+	 <img src="{% static 'blog/images/ch5.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 	  <p>Décoder le contenu d'un fichier et écrire le résultat dans un autre fichier :</p>
+	 <img src="{% static 'blog/images/ch6.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	   <span style="text-decoration: underline;">Chiffrer un fichier avec un algorithme de chiffrement et un mot de passe</span>
+	   <p>1 - Choisir un algorithme de chiffrement :</p>
+	 <img src="{% static 'blog/images/ch7.png'%}" class="img-fluid" alt="Responsive image"><br/>
+ 	<p>Voir également la page de manuel de la commande enc.</p>
+ 	<p>2 - Chiffrer un fichier avec l'algorithme DES3 et écrire le contenu dans un autre fichier (génération d'un fichier binaire) :</p>
+	 <img src="{% static 'blog/images/ch8.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p>Pour le déchiffrage (indication du mot de passe avec l'option -pass) :</p>
+	 <img src="{% static 'blog/images/ch9.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p>Chiffrage DES3 mais avec un encodage en BASE64 (pour un envoi par mail par exemple) :</p>
+	 <img src="{% static 'blog/images/ch10.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p>Pour le déchiffrage :</p>
+	 <img src="{% static 'blog/images/ch11.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p>Pour chiffrer un fichier en indiquant le mot de passe dans la ligne de commande (avec l'option -pass) :</p>
+	 <img src="{% static 'blog/images/ch12.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	 <p>Pour déchiffrer un fichier en indiquant le mot de passe dans un fichier :</p>
+	 <img src="{% static 'blog/images/ch13.png'%}" class="img-fluid" alt="Responsive image"><br/>
+
+	 <p style="color:blue;">Dans ce cas, seule la première ligne du fichier est utilisée comme mot de passe ou phrase de passe.</p>
+
+{%endblock content %}
