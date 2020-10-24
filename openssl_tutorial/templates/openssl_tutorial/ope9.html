@@ -7,32 +7,32 @@
 	<p>Avec OpenSSL, la clé privée contient également les informations de la clé publique. Il n'est donc pas nécessaire de générer la clé publique séparément.</p>
 	<span style="text-decoration: underline;">Génération d'une clé RSA</span>
 	<p>Générer une clé simple :</p>
-	<img src="{% static 'blog/images/ge1.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge1.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Générer une clé de 2048 bits et la sauvegarder dans un fichier :</p>
-	<img src="{% static 'blog/images/ge2.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge2.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Idem mais avec un cryptage DES3 et une phrase de passe :</p>
-	<img src="{% static 'blog/images/ge3.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge3.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Génération d'une clé publique RSA</p>
-	<img src="{% static 'blog/images/ge4.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge4.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<span style="text-decoration: underline;">Génération d'une clé DSA</span>
 	<p>Les clés DSA sont utilisées pour la signature d'objets divers.</p>
 	<p>Le processus de génération se déroule en deux étapes.</p>
 	<p>Premièrement, générer les paramètres permettant la génération de la clé :</p>
-	<img src="{% static 'blog/images/ge5.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge5.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Puis, générer la clé en fonction des paramètres générés ci-dessus :</p>
-	<img src="{% static 'blog/images/ge6.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge6.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Une phrase de passe est demandée lors de la génération de la clé DSA.</p>
 	<p>Pour ne pas avoir de phrase de passe, il suffit de supprimer le paramètre "-des3".</p>
 	<span style="text-decoration: underline;">Supprimer la phrase de passe d'une clé privée RSA</span>
 	<p>Cette commande permet de générer une nouvelle clé privée (newkey.pem) à partir de celle protégée par une phrase de passe (mykey.pem).</p>
-	<img src="{% static 'blog/images/ge7.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge7.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<span style="text-decoration: underline;">Supprimer la phrase de passe d'un certificat</span>
 	<p>Pour l'exemple, nous allons créer un certificat crypté (mycert.pem).</p>
 	<p>Ce fichier (mycert.pem) contiendra la clé privée et le certificat public et sera protégé par une phrase de passe.</p>
-	<img src="{% static 'blog/images/ge8.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge8.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Le décryptage du certificat se déroule en deux étapes :</p>
 	<p>Génération de la clé privée à partir du certificat crypté (mycert.pem) vers le nouveau certificat (newcert.pem) :</p>
-	<img src="{% static 'blog/images/ge9.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge9.png'%}" class="img-fluid" alt="Responsive image"><br/>
 	<p>Ajout du certificat public dans le nouveau certificat (newcert.pem) :</p>
-	<img src="{% static 'blog/images/ge10.png'%}" class="img-fluid" alt="Responsive image"><br/>
+	<img src="{% static 'openssl_tutorial/images/ge10.png'%}" class="img-fluid" alt="Responsive image"><br/>
 {%endblock content %}

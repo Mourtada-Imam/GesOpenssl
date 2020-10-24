@@ -2,7 +2,7 @@
 {{% load crispy_forms_tags %}
 {%block content %}
 
-<h1>Générateur de CSR</h1>
+<h1> CSR</h1>
 <form method="POST"> 
 	{% csrf_token %}
 	{{ form|crispy }}

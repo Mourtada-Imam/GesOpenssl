@@ -14,4 +14,6 @@ urlpatterns = [
     path('ope9/',views.ope9, name='ope9'),
     path('ope10/',views.ope10, name='ope10'),
     path('form/',views.form, name='form'),
+    path('crs/',views.csr, name='csr'),
+    path('server_req/',views.server_req, name='server_req'),
 ]
